@@ -1,0 +1,31 @@
+[project]
+name = "source2notion"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "click>=8.1.8",
+    "dotenv>=0.9.9",
+    "notion-api>=0.7.4",
+    "pyright>=1.1.398",
+]
+
+[project.scripts]
+s2n = "source2notion.cli:s2n"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/source2Notion"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.5",
+]
+
+[tool.pyright]
+include = [
+    "src"
+]
+
+[tool.uv]
+package = true
